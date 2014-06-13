@@ -1,13 +1,5 @@
 var MemoryStore = function(successCallback, errorCallback) {
 
-    initialize: function() {
-        var self = this;
-        this.store = new MemoryStore(function() {
-            self.showAlert('Store Initialized', 'Info');
-        });
-        $('.search-key').on('keyup', $.proxy(this.findByName, this));
-    }
-
     this.findByName = function(searchKey, callback) {
         var employees = this.employees.filter(function(element) {
             var fullName = element.firstName + " " + element.lastName;
